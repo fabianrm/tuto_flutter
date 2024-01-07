@@ -2,6 +2,7 @@
 import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/infrastructure/models/moviedb/movie_moviedb.dart';
 
+//Conevertiremos la respuesta JSON que viene de la API hacia nuestra entity movie
 class MovieMapper {
   static Movie movieDBToEntity(MovieMovieDB moviedb) => Movie(
       adult: moviedb.adult,

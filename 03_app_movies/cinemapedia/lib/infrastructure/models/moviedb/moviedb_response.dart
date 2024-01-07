@@ -1,5 +1,6 @@
 import 'movie_moviedb.dart';
 
+//Respuesta del Json precesada con quicktype
 class MovieDbResponse {
   final Dates? dates;
   final int page;

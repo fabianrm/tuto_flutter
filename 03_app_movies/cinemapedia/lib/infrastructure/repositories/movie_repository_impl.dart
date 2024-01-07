@@ -3,9 +3,12 @@ import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/domain/repositories/movies_repository.dart';
 
 class MovieRepositoryImpl extends MoviesRepository {
+  //creamos instancia del MoviesDataSource
   final MoviesDatasource datasource;
+  //creamos el constructor
   MovieRepositoryImpl({required this.datasource});
 
+  //Implementamos el metodo de la clase abstracta MoviesRepository
   @override
   Future<List<Movie>> getNowPlaying({int page = 1}) {
     return datasource.getNowPlaying(page: page);

@@ -1,3 +1,4 @@
+//results => parte de la respuesta JSON desde la BD (quicktype)
 class MovieMovieDB {
   final bool adult;
   final String backdropPath;

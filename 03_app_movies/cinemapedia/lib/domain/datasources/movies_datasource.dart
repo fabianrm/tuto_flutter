@@ -2,7 +2,6 @@
 import 'package:cinemapedia/domain/entities/movie.dart';
 
 abstract class MoviesDatasource {
- Future<List<Movie>> getNowPlaying({int page=1});
-
- 
+  //Metodo a implementar para obtener las movies recientes
+  Future<List<Movie>> getNowPlaying({int page = 1});
 }
