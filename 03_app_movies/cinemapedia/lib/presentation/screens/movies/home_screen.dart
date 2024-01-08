@@ -1,4 +1,3 @@
-import 'package:cinemapedia/presentation/widgets/shared/custom_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cinemapedia/presentation/providers/providers.dart';
@@ -27,7 +26,6 @@ class _HomeView extends ConsumerStatefulWidget {
 class _HomeViewState extends ConsumerState<_HomeView> {
   @override
   void initState() {
-    // TODO: implement initState 👇
     super.initState();
     ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
   }
@@ -37,11 +35,52 @@ class _HomeViewState extends ConsumerState<_HomeView> {
     final nowPlayingMovies = ref.watch(nowPlayingMoviesProvider);
     final slideShowMovies = ref.watch(moviesSlideShowProvider);
 
-    return Column(
-      children: [
-       const CustomAppBar(),
-        MoviesSlideshow(movies: slideShowMovies),
-        MovieHorizontalListview(movies: nowPlayingMovies, title: 'En cines', subTitle: 'Lunes 20 Dic',)
+    return CustomScrollView(
+      slivers: [
+        const SliverAppBar(
+          floating: true,
+          flexibleSpace: FlexibleSpaceBar(
+            title: CustomAppBar(),
+            centerTitle: true,
+          ),
+        ),
+        SliverList(delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return Column(
+              children: [
+                MoviesSlideshow(movies: slideShowMovies),
+                MovieHorizontalListview(
+                  movies: nowPlayingMovies,
+                  title: 'En cines',
+                  subTitle: 'Lunes 20 Dic',
+                  loadNextPage: () {
+                    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+                  },
+                ),
+                MovieHorizontalListview(
+                  movies: nowPlayingMovies,
+                  title: 'Populares',
+                  //subTitle: '',
+                  loadNextPage: () {
+                    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+                  },
+                ),
+                MovieHorizontalListview(
+                  movies: nowPlayingMovies,
+                  title: 'Mejor calificadas',
+                  subTitle: 'Todos los tiempos',
+                  loadNextPage: () {
+                    ref.read(nowPlayingMoviesProvider.notifier).loadNextPage();
+                  },
+                ),
+                const SizedBox(
+                  height: 10,
+                )
+              ],
+            );
+          },
+          childCount: 1
+        ))
       ],
     );
   }
