@@ -10,4 +10,7 @@ abstract class MoviesRepository {
 
   Future<List<Movie>> getTopRated({int page = 1});
 
+    //Metodo obterner movie por id
+  Future<Movie> getMovieById(String id);
+
 }
