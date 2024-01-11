@@ -5,11 +5,11 @@ class FullScreenLoader extends StatelessWidget {
 
   Stream<String> getLoadingMessages() {
     final messages = <String>[
-      'Cargando películas',
-      'Comprando palomitas de maíz',
-      'Conectando proyector',
-      'Preparando refresco',
-      'Ya mero...',
+      'Cargando películas 🎥',
+      'Comprando palomitas de maíz 🍿',
+      'Conectando proyector 📽️',
+      'Preparando refresco 🥤',
+      'Ya mero... 😻',
       'Esto se está tensando 😼'
     ];
 
