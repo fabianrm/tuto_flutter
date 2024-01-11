@@ -12,10 +12,10 @@ final actorsByMovieProvider =
 
 /* Mapa (state)(<String, Movie>)
  {
-  '509876' :  List<Actor>
-  '503473' :  List<Actor>
-  '507677' :  List<Actor>
-  '501975' :  List<Actor>
+  '509876' :  Actor[]
+  '503473' :  Actor[]
+  '507677' :  Actor[]
+  '501975' :  Actor[]
  }
  */
 
