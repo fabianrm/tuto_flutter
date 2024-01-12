@@ -13,4 +13,7 @@ abstract class MoviesRepository {
     //Metodo obterner movie por id
   Future<Movie> getMovieById(String id);
 
+    //Metodo para realizar busqueda
+  Future<List<Movie>> seacrhMovies(String query);
+
 }
